@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  ## Name of the helm installation. 
+  ## Same value used on "helm install [NAME]" command.
+  name: keda-operator
+  namespace: flux-system
+spec:
+  ## Interval that you want to apply the lastest config in case new version is available.
+  interval: 5m0s
+  chart:
+    spec:
+      ## Chart field must be the name of the helmchart. 
+      ## Same value used on "helm install [NAME] [CHART]" command.
+      chart: keda
+      ## Version field must be the chart version you want to install
+      ## Same value used on "--version" parameter.
+      version: '2.*'
+      ## SourceRef must match the same name used in the helmrepository.yml file
+      sourceRef:
+        kind: HelmRepository
+        name: keda-operator
+  install:
+    createNamespace: true
+  targetNamespace: keda
