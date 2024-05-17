@@ -20,6 +20,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: crossplane-stable
-    install:
-      createNamespace: true
+  install:
+    createNamespace: true
   targetNamespace: crossplane-system
