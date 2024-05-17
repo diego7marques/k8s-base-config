@@ -1,0 +1,13 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  ## Name of the repository.
+  ## Same value used on "helm repo add [NAME]" command.
+  name: crossplane-stable
+  namespace: flux-system 
+spec:
+  ## Interval that you want flux search for new versions.
+  interval: 5m0s
+  ## Url field must be the endpoint of the helmrepository. 
+  ## Same value used on "helm repo add [NAME] [URL]" command.
+  url: https://charts.crossplane.io/stable
