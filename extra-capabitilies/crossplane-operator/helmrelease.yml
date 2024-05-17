@@ -12,7 +12,7 @@ spec:
     spec:
       ## Chart field must be the name of the helmchart. 
       ## Same value used on "helm install [NAME] [CHART]" command.
-      chart: crossplane-stable/crossplane 
+      chart:  crossplane 
       ## Version field must be the chart version you want to install
       ## Same value used on "--version" parameter.
       version: '1.*'
